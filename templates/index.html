@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+</head>
+
+<body>
+    <center>
+        <h1>1 Загрузите файл |</h1>
+        <h1>2 Выбирите тип проверки| </h1>
+        <h1>3 Нажмите  upload</h1>
+
+        <form action="/work" method="post" enctype=multipart/form-data>
+            <input type=file name=file>
+            <input type=submit value=Upload>
+            <label for="types">Выберите тип анализа:</label>
+
+            <select class="select2-selection" name="type" id="types">
+                <option value="ML">ML</option>
+                <option value="Sentence_extraction">Извлечение предложения</option>
+            </select>
+        </form>
+    </center>
+    <center>
+        <div class="list">
+            <div class="rus">
+                {% for row in rus %}
+                {{row}}
+                {% endfor %}
+            </div>
+            <div class="eng">
+                {% for row in eng %}
+                {{row}}
+                {% endfor %}
+            </div>
+        </div>
+        <form class="read" action="/read" method="post"><button type="submit">read</button></form>
+    </center>
+</body>
+
+</html>

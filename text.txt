@@ -1,0 +1,14 @@
+export FLASK_APP=main
+FLASK_ENV=development
+flask run
+
+
+virtualenv env
+source env/bin/activate
+pip freeze > requirements.txt
+
+
+ML 
+https://www.activestate.com/blog/how-to-do-text-summarization-with-python/
+
+https://wiki5.ru/wiki/Gensim
